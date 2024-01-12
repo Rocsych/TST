@@ -12,14 +12,14 @@ import (
 // var ErrDeadProxy = errors.New("Proxy is dead")
 // var ErrRequest = errors.New("Error requesting url")
 
-var defaultReqAddr = "api.ip.sb/ip"
+var defaultReqAddr = "api.myip.com"
 
 type checkerPool struct {
-	in           <-chan proxy.Proxy
-	out          chan<- proxy.Proxy
-	reqAddr      string
-	timeout      time.Duration
-	workers      int
+	in      <-chan proxy.Proxy
+	out     chan<- proxy.Proxy
+	reqAddr string
+	timeout time.Duration
+	workers int
 }
 
 type ProxyChecker interface {
